@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>flex网格布局</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<style type="text/css">
+	html{
+		font-size: 62.5%;
+	}
+	body {
+		background-color: #77bbdd;
+		font-size: 1.6rem;
+	}
+	h1{
+		font-size: 2.2rem;
+		text-align: center;
+	}
+/******基本网格布局样式********/	
+	.container {
+		border: 3px solid #f5f2f0;
+		border-radius: 10px;
+	}
+	.row {
+		display: flex;
+		border-radius: 10px;
+	}
+	.row-item {
+		background-color: #f5f2f0;
+		line-height:50px;
+		height:50px;
+		margin:10px;
+		text-align: center;
+		border-radius: 10px;
+	}
+	.row1-item1 {
+		flex: 4;
+	}
+	.row1-item2 {
+		width: 300px;/***写成flex: 0 0 300px;是一样的意思**/
+	}
+	.row1-item3 {
+		flex: 2;
+	}
+/******圣杯布局*******/	
+/*****下面定义了每一块的高度,这是为了方便展示,实际开发中一般都是随内容撑开的******/
+	.superCup {
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: 0 0 20px  #fff;
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		text-align: center;
+		background-color: #fff;
+	}
+	.header {
+		height: 100px;
+		line-height: 100px;
+		background-color: #666666; 
+	}
+	.main {
+		
+		display: flex;
+	}
+	.main-left {
+		background-color: yellow;
+		height: 300px;
+		line-height: 300px;
+		flex: 2;
+	}
+	.main-center {
+		background-color: #d6d6d6;
+		height: 300px;
+		line-height: 300px;
+		flex:0 0 50%;
+	}
+	.main-right {
+		background-color: #ff6633;
+		height: 300px;
+		line-height: 300px;
+		flex: 2;
+	}
+	.footer {
+		height: 100px;
+		line-height: 100px;
+		background-color: #666666; 
+	}
+/***************小屏幕时的样式*********************/	
+@media all and (max-width:768px) {
+	.main {
+		
+		display: flex;
+		flex-direction: column;
+	}
+	.main-left {
+		flex: 1;
+	}
+	.main-center {
+		flex: 1;
+	}
+	.main-right {
+		flex: 1;
+	}
+}	
+
+/******输入框布局*******/
+
+</style>
+<body>
+<!-- ********基本网格布局************-->
+<!-- 可以跟width混着用  -->
+<h1>---------基本网格布局--------</h1>
+<div class="container">
+	<div class="row">
+		<div class="row-item row1-item1">flex:4</div>
+		<div class="row-item row1-item2">width:300px</div>
+		<div class="row-item row1-item3">flex:2</div>
+	</div>	
+</div>
+<!-- ********圣杯布局************-->
+<h1>-----------圣杯布局-----------</h1>
+<div class="superCup">
+	<div class="header">header</div>
+	<div class="main">
+		<div class="main-left">nav</div>
+		<div class="main-center">content</div>
+		<div class="main-right">ads</div>
+	</div>
+	<div class="footer">footer</div>
+</div>
+</body>
+</html>

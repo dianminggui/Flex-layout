@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex布局</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{
+			background-color: #222;
+			font-size: 0;
+		}
+		div{
+			width:102px;
+			height:100px;
+			padding:5px;
+			margin:18px;
+			border-radius: 5px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px  #A8A8A8 inset;
+			vertical-align: top;
+		}
+		span{
+			display: inline-block;
+			margin:5px 7px;
+			width:20px;
+			height:20px;
+			
+			border-radius: 10px;
+			border-bottom-style:groove;
+			background-color: #222;
+		}
+/********一个点的情况**********/
+		.box1{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-start;
+		}
+		.box2{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: center;
+		}
+		.box3{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-end;
+		}
+
+		.box4{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		.box5{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.box6{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-end;
+			align-items:center;
+		}
+		.box7{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-start;
+			align-items:flex-end;
+		}
+		.box8{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: center;
+			align-items: flex-end;
+		}
+		.box9{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+		}
+/*********两个点的情况*************/
+		.box11{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+		}
+		.box12{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+			align-items:center;
+		}
+		.box13{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+		.box14{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.box15{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-items: center;
+		}
+		.box16{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-start;
+		}
+		.box16-item{
+			align-self: center;
+		}
+		.box17{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-items:flex-start;
+		}
+		.box17-item{
+			align-self: flex-end;
+		}
+		.box18{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.box18-item {
+			align-self: center;
+		}
+		.box19{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.box19-item{
+			align-self: flex-end;
+		}
+/********三个点的情况*************/
+		.box21{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-start;
+			flex-direction: column;
+			align-items: flex-start;
+		}	
+		.box21-item2 {
+			align-self: center;
+		}
+		.box21-item3 {
+			align-self: flex-end;
+		}
+		.box22{
+			display: inline-flex;
+			display: -webkit-inline-flex;
+			justify-content: flex-start;
+			align-items: flex-end;
+		}	
+		.box22-item2 {
+			align-self: center;
+		}
+		.box23{
+			display: inline-flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-content: center;
+
+		}
+		.column231{
+			display: flex;
+			justify-content: flex-start;
+		}
+		.column232{
+			display: flex;
+			justify-content: space-between;
+		}
+/******四个点的情况*********/		
+		.box31 {
+			display: inline-flex;
+			justify-content: space-between;
+
+		}	
+		.column331,.column332{
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+		.box32{
+			display: inline-flex;
+			flex-wrap:wrap;
+			justify-content: flex-end;
+			align-content: space-between;
+		}
+/******五个点的情况*********/	
+		.box41{
+			display: inline-block;
+			justify-content: flex-start;
+			flex-direction: column;
+		}	
+		.box41-item1,.box41-item3{
+			display: flex;
+			justify-content: space-between;
+		}
+		.box41-item2{
+			display: flex;
+			justify-content: center;
+		}
+/***********六个点的情况*******/
+		.box51{
+			display: inline-flex;
+			flex-wrap: wrap;
+			align-content: space-between;
+		}
+		.box52{
+			display: inline-flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			align-content: space-between;
+			flex-direction: column;
+		}	
+/**********九个点的情况***********/
+		.box81{
+			display: inline-block;
+			flex-wrap: wrap;
+		}			
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<span></span>
+	</div>
+	<div class="box2">
+		<span></span>
+	</div>
+	<div class="box3">
+		<span></span>
+	</div>
+	<div class="box4">
+		<span></span>
+	</div>
+	<div class="box5">
+		<span></span>
+	</div>
+	<div class="box6">
+		<span></span>
+	</div>
+	<div class="box7">
+		<span></span>
+	</div>
+	<div class="box8">
+		<span></span>
+	</div>
+	<div class="box9">
+		<span></span>
+	</div>
+		<div class="box11">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="box12">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="box13">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="box14">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="box15">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="box16">
+		<span></span>
+		<span class="box16-item"></span>
+	</div>
+	<div class="box17">
+		<span></span>
+		<span class="box17-item"></span>
+	</div>
+	<div class="box18">
+		<span class="box18-item"></span>
+		<span></span>
+	</div>
+	<div class="box19">
+		<span class="box19-item"></span>
+		<span></span>
+	</div>
+	<div class="box21">
+		<span class="box21-item1"></span>
+		<span class="box21-item2"></span>
+		<span class="box21-item3"></span>
+	</div>
+	<div class="box22">
+		<span class="box22-item1"></span>
+		<span class="box22-item2"></span>
+		<span class="box22-item3"></span>
+	</div>
+	<div class="box23">
+		<p class="column231">
+			<span></span>
+		</p>
+		<p class="column232">
+			<span></span>
+			<span></span>
+		</p>
+	</div>
+	<div class="box31">
+		<p class="column331">
+			<span></span>
+			<span></span>
+		</p>
+		<p class="column332">
+			<span></span>
+			<span></span>
+		</p>
+	</div>
+	<div class="box32">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+	</div>
+	<div class="box41">
+		<p class="box41-item1">
+			<span></span>
+			<span></span>
+		</p>
+		<p class="box41-item2">
+			<span></span>
+		</p>
+		<p class="box41-item3">
+			<span></span>
+			<span></span>
+		</p>		
+	</div>
+	<div class="box51">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>		
+	</div>
+	<div class="box52">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>		
+	</div>
+	<div class="box81">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>		
+	</div>		
+</body>
+</html>
