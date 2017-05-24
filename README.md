@@ -1,2 +1,2 @@
 # Flex-layout
-flex布局Demo
+看完阮一峰大神的flex布局,真是觉得flex布局好好用呀.但光看不敲不可能学会,所以自己看完后也利用了flex布局做了些demo
